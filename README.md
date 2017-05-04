@@ -9,7 +9,7 @@ A. SmoothPathPlanner
 Here is an an example to generate a path using the default paramters. 
 
 ```java
-//create waypoint path
+//example create waypoint path
 double[][] waypoints = new double[][]{
 	{1, 1},
 	{5, 1},
@@ -30,4 +30,17 @@ path.calculate(totalTime, timeStep, robotTrackWidth);
 B. Localisation using enchanced filter
 =================
 
-<Example of Paths with different Paramters>
+Class
+Publisher
+Subscriber
+
+
+
+> Note: This algorithm does consider pat of the robot. What that means is it does require an initial or final orientation of the robot, and it gurantee the final orientation. Once you reach the desintation, you may need to use navigation command on your chassis to rotate to the desired final heading.
+
+Assumptions
+=========================
+1. Robot Chassis is a skid-steer platform
+2. Ground robot is to travel on is considered to be an even plane, with no hills, ramps, bumbs, or other obstacles
+3. Robot has independant speed controllers for both sides of the Robot Chassis, tuned to meet the velocity profile changes
+4. Sufficient time is given for the robot to complete the path. 
